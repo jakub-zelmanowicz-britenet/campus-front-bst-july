@@ -16,10 +16,9 @@ const getProducts = () => {
 const renderProducts = (products) => {
     const productsElement = document.querySelector('#products');
     if (productsElement) {
-
         products.forEach( product => {
             productsElement.innerHTML += `
-                <div class="product">
+                <a class="product a--no-style" href="product_detail.html?id=${product.id}">
                     <img class="product__img" src="img/najtansze-nowe-auta-otwarcie.jpeg" alt="Najtansze nowe auta"/>
                     <div class="product__info">
                         <h3> ${product.name} </h3>
@@ -29,10 +28,9 @@ const renderProducts = (products) => {
                             <p class="product__buy"> KUP </p>
                         </div>
                     </div>
-                </div>
+                </a>
             `
         } );
-
     }
     else{
         throw new Error('Cannot find #products.');

@@ -44,3 +44,8 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
+.a--no-style {
+    text-decoration: none;
+    color: inherit;
+}
