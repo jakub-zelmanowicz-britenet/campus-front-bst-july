@@ -7,6 +7,7 @@
     <link href="style.css" rel="stylesheet" type="text/css">
 
     <script src="js/productService.js" defer></script>
+    <script src="js/authService.js" defer></script>
 </head>
 <body>
     <div class="content">
@@ -26,6 +27,17 @@
 
         <div id="products" class="products">
         </div>
+
+        <form onsubmit="return performLogin()">
+            <label for="username"> Username </label>
+            <input id="username" type="text">
+
+            <label for="password"> Password </label>
+            <input id="password" type="password">
+
+            <input type="submit" value="Login">
+        </form>
+
     </div>
 </body>
 </html>
