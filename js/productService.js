@@ -37,10 +37,25 @@ const renderProducts = (products) => {
     }
 }
 
+const createProduct = async () => {
+    const user_token = sessionStorage.getItem('user_token');
+    try {
+        await fetch('http://localhost:8080/api/v1/product', {
+            method: 'POST',
+            headers: {
+                'Authorization': user_token
+            }
+        });
+        return Promise.resolve();
+    } catch (e) {
+        return Promise.reject(e);
+    }
+}
+
 getProducts()
 .then( products => {
     renderProducts(products);
 } )
 .catch( error => {
     console.log(JSON.stringify(error));
-})
+});

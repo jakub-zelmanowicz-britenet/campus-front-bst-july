@@ -3,7 +3,8 @@ const login = async (username, password) => {
         const response = await fetch('http://localhost:8080/api/v1/authentication', {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': ''
             },
             body: JSON.stringify({
                 username: username,
@@ -47,6 +48,10 @@ const performLogin = () => {
         .then( data => {
             //TODO zalogowano!
             alert('Zalogowano!');
+            createProduct()
+                .then(_ => {})
+                .catch(e => console.log(e))
+
         } )
         .catch( err => {
             console.log('Error');
